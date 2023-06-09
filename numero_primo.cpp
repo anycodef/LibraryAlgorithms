@@ -10,12 +10,16 @@ bool es_primo(unsigned int);
 
 int main() {
   // con este for probamos del 0 al 20
-  for ( int i = 0; i <= 20; i++) {
+  int suma = 0;
+  for ( int i = 1; i < 250; i++) {
     // solo mostramos los primos
-    if (es_primo(i)) {
-      cout << i  << endl;
+    if (!es_primo(i)) {
+      cout << i << endl;
+      suma += i;
     }
   }
+
+  cout << "La suma es: " << suma << endl;
 
   return 0;
 }
