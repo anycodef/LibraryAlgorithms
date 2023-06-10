@@ -1,14 +1,35 @@
 # include <iostream>
 # include <list>
+# include <time.h>
 
 using namespace std;
 
+struct Node {
+  int a;
+};
+
 int main() {
-  list<int> a = {2,3,4,2};
+  srand(time(NULL));
 
-  for (auto i = a.begin(); i != a.end(); i++) {
+  list<Node*> listNode;
+  Node* pointer = NULL;
 
-    cout << *i << endl;
+  for (int i = 0; i < 10; i++) {
+    pointer = new Node();
+    pointer -> a = rand() % 6;
+    listNode.push_back(pointer);
+  }
+
+  for (Node* i: listNode) {
+    cout << i -> a << endl;
+  }
+
+  listNode.unique();
+
+  cout << endl;
+
+  for (Node* i: listNode) {
+    cout << i -> a << endl;
   }
 
   return 0;
