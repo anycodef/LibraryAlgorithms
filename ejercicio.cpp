@@ -9,12 +9,18 @@ int main() {
   cout << "\n\tIngrese el total de personas: ";
   cin >> total;
 
-  cout << "\n\ta = primaria" << endl;
-  cout << "\n\tb = secundaria" << endl;
-  cout << "\n\tc = tecnico" << endl;
-  cout << "\n\td = universitaria" << endl;
-
   for ( int i = 1; i <= total; i++ ) {
+
+    system("clear"); // en windows es system("cls");
+
+    cout << "\n\t Personas entrevistadas: " << primaria + secundaria + tecnico + universitaria << endl;
+
+    cout << "\n\ta = primaria\t(" << primaria << ")" << endl;
+    cout << "\n\tb = secundaria\t(" << secundaria << ")" << endl;
+    cout << "\n\tc = tecnico\t(" << tecnico << ")" << endl;
+    cout << "\n\td = universitaria\t(" << universitaria << ")" << endl;
+
+
     cout << "\n\t Grado: ";
     cin >> grado;
 
@@ -29,11 +35,22 @@ int main() {
         } else {
           if (grado == 'd') {
             universitaria++;
+          } else {
+            i--;
           }
         }
       }
     }
   }
+
+  system("clear");
+  cout << "\n\t Personas entrevistadas: " << primaria + secundaria + tecnico + universitaria << endl;
+
+  cout << "\n\ta = primaria\t(" << primaria << ")" << endl;
+  cout << "\n\tb = secundaria\t(" << secundaria << ")" << endl;
+  cout << "\n\tc = tecnico\t(" << tecnico << ")" << endl;
+  cout << "\n\td = universitaria\t(" << universitaria << ")" << endl;
+
 
   cout << "\n\tPORCENTAJE\n" << endl;
   cout << "\t\tPrimaria: " << float(primaria) / float(total) * 100 << "%" << endl;
